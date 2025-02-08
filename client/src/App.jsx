@@ -6,6 +6,10 @@ import Login from "./Auth/Login";
 import Register from "./Auth/Register";
 import { useAuth } from "./contexts/AuthContext";
 import { Navigate } from "react-router-dom";
+import BinsComponent from "./components/BinsComponent";
+// import VehiclesComponent from "./components/VehiclesComponent";
+import WasteManagementDashboard from "./components/WasteManagementDashboard";
+
 const App = () => {
   const { isAuthenticated } = useAuth();
   return (
@@ -25,6 +29,9 @@ const App = () => {
           path="/dashboard"
           element={isAuthenticated ? <Dashboard /> : <Login />}
         />
+        <Route path="/bins" element={<BinsComponent />} />
+        {/* <Route path="/vehicles" element={<VehiclesComponent />} /> */}
+        <Route path="/vehicles" element={<WasteManagementDashboard />} />
       </Routes>
     </Router>
   );
