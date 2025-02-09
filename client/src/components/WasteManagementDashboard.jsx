@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   BarChart,
   Bar,
@@ -59,7 +60,9 @@ const WasteManagementDashboard = () => {
           </button>
           <button className="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center gap-2">
             <MapPin className="w-4 h-4" />
-            View Map
+            <Link to="/WasteMap" className="text-white">
+              View Map
+            </Link>
           </button>
         </div>
       </div>
